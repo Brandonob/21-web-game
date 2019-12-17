@@ -132,12 +132,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const findWinner = () => {
         let div4 = document.createElement("div")
         let h1 = document.createElement("h1")
-        if(scores[0] === scores[1]) {console.log("It is a tie")}
+        if(scores[0] === scores[1]) {h1.innerText = "IT IS A TIE"}
         if(scores[0] > scores[1]) {
-            console.log("The player wins")
+            h1.innerText = "YOU WIN !"
         }else {
-            console.log("The cpu wins")
+            h1.innerText = "THE COMPUTER WINS !"
         }
+        document.body.appendChild(div4)
+        div4.appendChild(h1)
         //append winners to screen
         //clears screen
         //gives option for new game (button)
@@ -165,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 playerTurn = "playerOneDiv"
             }
         })
-        debugger
+        // debugger
     })
     stayButton.addEventListener("click", () => {
         playerTurn = "cpuDiv"
